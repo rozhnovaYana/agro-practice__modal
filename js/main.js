@@ -11,33 +11,15 @@ const publicBtn = document.querySelector(".public-btn"),
     modalPublic = document.querySelector(".modal-public"),
     modalPublicClose=modalPublic.querySelector(".modal__wrapper-btn")
 
-checkPublicWrapper.addEventListener("click", () => {
+checkPublicWrapper.querySelector(".public-btn").addEventListener('click', () => {
     modalPublic.classList.add("active")
-    // document.querySelector(".modal__text").addEventListener("scroll", (e) => {
-    //     let allHeight = e.target.scrollHeight-e.target.clientHeight
-    //         scrollHeight=e.target.scrollTop
-    //     if (allHeight - 100 < scrollHeight) {
-    //         modalPublicClose.classList.add("modal-public__btn_active")
-    //         modalPublicClose.addEventListener("click", () => {
-    //             modalPublic.classList.remove("active")
-    //             document.body.style.overflow = ""
-    //             checkPublic.disabled = "false"
-    //             checkPublic.checked="true"
-    //         })
-    //     }
-    // })
-
-
-        if (true) {
-            modalPublicClose.classList.add("modal-public__btn_active")
-            modalPublicClose.addEventListener("click", () => {
-                modalPublic.classList.remove("active")
-                document.body.style.overflow = ""
-                checkPublic.disabled = "false"
-                checkPublic.checked="true"
-            })
-        }
-
+    modalPublicClose.classList.add("modal-public__btn_active")
+    modalPublicClose.addEventListener("click", () => {
+        modalPublic.classList.remove("active")
+        document.body.style.overflow = ""
+        checkPublic.disabled = "false"
+        checkPublic.checked="true"
+    })
 })
 
 link.addEventListener("click", (e) => {
