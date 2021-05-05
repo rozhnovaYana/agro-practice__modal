@@ -1,0 +1,80 @@
+.select
+    position: relative
+    width: 300px
+    margin: 15px auto
+    &__head
+        width: 100%
+        display: flex
+        align-items: center
+        cursor: pointer
+        box-sizing: border-box
+        color: black
+        text-align: center
+        border-radius: 10px
+        border: 1px solid #00A935
+        padding: 5px 10px
+        font-size: 15px
+
+    &__head
+        &::after
+            content: '\203A '
+            background: white
+            position: absolute
+            right: 20px
+            bottom: 50%
+            transform: translateY(50%) rotate(90deg)
+            display: block
+            transition: .2s ease-in
+            color: #00A935
+            font-size: 30px
+
+    &__head.open::after
+        transform: translateY(50%) rotate(180deg)
+
+    &__list
+        visibility: hidden
+        position: absolute
+        top: 50%
+        left: 0px
+        right: 0
+        background: white
+        border: 1px solid #00A935
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2)
+        border-radius: 10px
+        overflow-x: hidden
+        z-index: 5
+        margin: 0
+        padding: 0
+        font-size: 1em
+        color: #00A935
+        scrollbar-color: dark
+        scrollbar-width: thin
+        overscroll-behavior: contain
+        transition: 0.5s all
+        opacity: 0
+        &_active
+            visibility: visible
+            opacity: 1
+            top: 100%
+            transition: 0.5s all
+            box-shadow: -2px 2px 10px rgba(0,0,0,0.5)
+
+    &__list::-webkit-scrollbar
+        width: 7px
+        background-color: #F8F9FA
+        padding: 5px
+
+    &__list::-webkit-scrollbar-thumb
+        border-radius: 10px
+        background-color: #D9D9D9
+
+    &__list .select__item
+        position: relative
+        border-top: 1px solid rgba(224, 229, 231, 0.5)
+        padding: 10px 15px
+        cursor: pointer
+        list-style-type: none
+        height: 30p
+
+    &__list .select__item:hover
+        background-color: rgba(224, 229, 231, 0.5)
