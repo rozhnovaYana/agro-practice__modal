@@ -13,22 +13,10 @@ const publicBtn = document.querySelector(".public-btn"),
 
 checkPublicWrapper.addEventListener("click", () => {
     modalPublic.classList.add("active")
-    // document.querySelector(".modal__text").addEventListener("scroll", (e) => {
-    //     let allHeight = e.target.scrollHeight-e.target.clientHeight
-    //         scrollHeight=e.target.scrollTop
-    //     if (allHeight - 100 < scrollHeight) {
-    //         modalPublicClose.classList.add("modal-public__btn_active")
-    //         modalPublicClose.addEventListener("click", () => {
-    //             modalPublic.classList.remove("active")
-    //             document.body.style.overflow = ""
-    //             checkPublic.disabled = "false"
-    //             checkPublic.checked="true"
-    //         })
-    //     }
-    // })
-
-
-        if (true) {
+    document.querySelector(".modal__text").addEventListener("scroll", (e) => {
+        let allHeight = e.target.scrollHeight-e.target.clientHeight
+            scrollHeight=e.target.scrollTop
+        if (allHeight - 100 < scrollHeight) {
             modalPublicClose.classList.add("modal-public__btn_active")
             modalPublicClose.addEventListener("click", () => {
                 modalPublic.classList.remove("active")
@@ -37,6 +25,10 @@ checkPublicWrapper.addEventListener("click", () => {
                 checkPublic.checked="true"
             })
         }
+    })
+
+
+        
 
 })
 
